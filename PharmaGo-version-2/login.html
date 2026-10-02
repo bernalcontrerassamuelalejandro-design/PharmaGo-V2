@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaGo - Iniciar sesión</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <span>Pharma</span><strong>Go</strong>
+        </div>
+        <p class="subtitulo">Consulta inteligente de medicamentos</p>
+
+        <div class="login-box">
+            <h1>Iniciar sesión</h1>
+            <p class="descripcion">Selecciona tu tipo de cuenta para continuar</p>
+
+            <div class="roles">
+                <button type="button" class="rol activo" data-rol="Paciente">
+                    <span class="icono">👤</span>
+                    <span>Paciente</span>
+                </button>
+                <button type="button" class="rol" data-rol="Farmacéutico">
+                    <span class="icono">💊</span>
+                    <span>Farmacéutico</span>
+                </button>
+                <button type="button" class="rol" data-rol="Administrador">
+                    <span class="icono">⚙️</span>
+                    <span>Administrador</span>
+                </button>
+            </div>
+
+            <div class="rol-seleccionado">
+                <span id="iconoRol">👤</span>
+                <span id="textoRol">Ingresando como Paciente</span>
+            </div>
+
+            <form id="loginForm" novalidate>
+                <div class="campo">
+                    <label for="usuario">Correo electrónico</label>
+                    <input type="text" id="usuario" placeholder="correo@ejemplo.com" autocomplete="email">
+                    <small class="error-campo" id="errorUsuario"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="password">Contraseña</label>
+                    <div class="password-container">
+                        <input type="password" id="password" placeholder="Ingresa tu contraseña">
+                        <button type="button" id="mostrarPassword" class="ver-password">👁</button>
+                    </div>
+                    <small class="error-campo" id="errorPassword"></small>
+                </div>
+
+                <div class="opciones">
+                    <label class="recordar">
+                        <input type="checkbox" id="recordar">
+                        Recordarme
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-login">Iniciar sesión</button>
+            </form>
+
+            <div id="mensaje" class="mensaje"></div>
+
+            <a href="index.html" class="volver">Volver al inicio</a>
+        </div>
+    </div>
+
+    <script src="js/services/storageService.js"></script>
+    <script src="js/core/utils.js"></script>
+    <script src="js/auth/sesion.js"></script>
+    <script src="js/auth/login.js"></script>
+</body>
+</html>
